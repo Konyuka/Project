@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Project Manager</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -33,7 +33,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                      Project Manager
                     </a>
                 </div>
 
@@ -58,7 +58,7 @@
 
 
 <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" 
+                                <a href="#" class="dropdown-toggle"
                                 data-toggle="dropdown" role="button" aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>  Admin <span class="caret"></span>
                                 </a>
@@ -77,7 +77,7 @@
 
 
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" 
+                                <a href="#" class="dropdown-toggle"
                                 data-toggle="dropdown" role="button" aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>  {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -109,7 +109,7 @@
 
             <div class="row">
                 @yield('content')
-            
+
             </div>
          </div>
 
