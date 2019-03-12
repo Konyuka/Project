@@ -15,18 +15,21 @@
 
 
                             <div class="form-group">
+
                                 <label for="project-name">Name<span class="required">*</span></label>
-                                <input   placeholder="Enter name"  
+
+                                <input   placeholder="Enter name"
                                           id="project-name"
                                           required
                                           name="name"
                                           spellcheck="false"
                                           class="form-control"
-                                           />
-                                  </div>
+                                  />
+
+                            </div>
 
                                   @if($companies == null)
-                                  <input   
+                                  <input
                                   class="form-control"
                                   type="hidden"
                                           name="company_id"
@@ -40,7 +43,7 @@
                             <div class="form-group">
                                 <label for="company-content">Select company</label>
 
-                                <select name="company_id" class="form-control" > 
+                                <select name="company_id" class="form-control" >
 
                                 @foreach($companies as $company)
                                         <option value="{{$company->id}}"> {{$company->name}} </option>
@@ -51,22 +54,22 @@
 
                             <div class="form-group">
                                 <label for="project-content">Description</label>
-                                <textarea placeholder="Enter description" 
-                                          style="resize: vertical" 
+                                <textarea placeholder="Enter description"
+                                          style="resize: vertical"
                                           id="project-content"
                                           name="description"
                                           rows="5" spellcheck="false"
                                           class="form-control autosize-target text-left">
 
-                                          
+
                                           </textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary"
-                                       value="Submit"/>
+                                       value="submit"/>
                             </div>
                         </form>
-   
+
 
       </div>
 </div>
@@ -81,7 +84,7 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
               <li><a href="/projects"><i class="fa fa-user-o" aria-hidden="true"></i> My projects</a></li>
-              
+
             </ol>
           </div>
 

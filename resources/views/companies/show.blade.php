@@ -3,7 +3,7 @@
 @section('content')
 
 
-     
+
      <div class="row col-md-9 col-lg-9 col-sm-9 pull-left ">
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -17,6 +17,9 @@
       <!-- Example row of columns -->
       <div class="row  col-md-12 col-lg-12 col-sm-12" style="background: white; margin: 10px; ">
       <a href="/projects/create/{{ $company->id }}" class="pull-right btn btn-default btn-sm" >Add Project</a>
+
+      <hr>
+
       @foreach($company->projects as $project)
         <div class="col-lg-4 col-md-4 col-sm-4">
           <h2>{{ $project->name }}</h2>
@@ -39,18 +42,16 @@
               <li><a href="/companies/{{ $company->id }}/edit">Edit</a></li>
               <li><a href="/projects/create/{{ $company->id }}">Add Project</a></li>
               <li><a href="/companies">My  Companies</a></li>
-              <li><a href="/company/create">Create new Company</a></li>
-            
+              <li><a href="/companies/create">Create new Company</a></li>
+
             <br/>
-            
-            
+
               <li>
 
-                  
-              <a   
+              <a
               href="#"
                   onclick="
-                  var result = confirm('Are you sure you wish to delete this Company?');
+                  var result = confirm('Samahani... Do wish to delete this Company?');
                       if( result ){
                               event.preventDefault();
                               document.getElementById('delete-form').submit();
@@ -60,15 +61,13 @@
                   Delete
               </a>
 
-              <form id="delete-form" action="{{ route('companies.destroy',[$company->id]) }}" 
+              <form id="delete-form" action="{{ route('companies.destroy',[$company->id]) }}"
                 method="POST" style="display: none;">
+
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}
               </form>
 
- 
-              
-              
               </li>
 
               <!-- <li><a href="#">Add new member</a></li> -->

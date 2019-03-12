@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+
     <script src="https://use.fontawesome.com/874dbadbd7.js"></script>
 
 
@@ -117,6 +118,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/welcome.js') }}"></script>
+
 
     @yield('jqueryScript')
 </body>

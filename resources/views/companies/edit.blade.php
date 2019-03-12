@@ -16,22 +16,25 @@
                             <input type="hidden" name="_method" value="put">
 
                             <div class="form-group">
+
                                 <label for="company-name">Name<span class="required">*</span></label>
-                                <input   placeholder="Enter name"  
+                                <input
+                                          placeholder="Enter name"
                                           id="company-name"
                                           required
                                           name="name"
                                           spellcheck="false"
                                           class="form-control"
                                           value="{{ $company->name }}"
-                                           />
+                                />
+
                             </div>
 
 
                             <div class="form-group">
                                 <label for="company-content">Description</label>
-                                <textarea placeholder="Enter description" 
-                                          style="resize: vertical" 
+                                <textarea placeholder="Enter description"
+                                          style="resize: vertical"
                                           id="company-content"
                                           name="description"
                                           rows="5" spellcheck="false"
@@ -43,7 +46,7 @@
                                        value="Submit"/>
                             </div>
                         </form>
-   
+
 
       </div>
 </div>
@@ -58,9 +61,9 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
               <li><a href="/companies/{{ $company->id }}"><i class="fa fa-building-o" aria-hidden="true"></i>
-               View companies</a></li>
+               View Company</a></li>
               <li><a href="/companies"><i class="fa fa-building" aria-hidden="true"></i> All companies</a></li>
-              
+
             </ol>
           </div>
 
