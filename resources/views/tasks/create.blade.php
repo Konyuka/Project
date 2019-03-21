@@ -5,23 +5,21 @@
 
 
      <div class="row col-md-9 col-lg-9 col-sm-9 pull-left " style="background: white; ">
-
-
-    <h1>Create new project for </h1>
+    <h1>Create new Task </h1>
 
       <!-- Example row of columns -->
       <div class="row  col-md-12 col-lg-12 col-sm-12" >
 
-      <form method="post" action="{{ route('projects.store') }}">
+      <form method="post" action="{{ route('tasks.store') }}">
                             {{ csrf_field() }}
 
 
                             <div class="form-group">
 
-                                <label for="project-name">Name<span class="required">*</span></label>
+                                <label for="task-name">Name<span class="required">*</span></label>
 
                                 <input   placeholder="Enter name"
-                                          id="project-name"
+                                          id="task-name"
                                           required
                                           name="name"
                                           spellcheck="false"
@@ -30,35 +28,35 @@
 
                             </div>
 
-                                  @if($companies == null)
+                                  @if($tasks == null)
                                   <input
                                   class="form-control"
                                   type="hidden"
-                                          name="company_id"
-                                          value="{{ $company_id }}"
+                                          name="task_id"
+                                          value="{{ $task_id }}"
                                            />
                                   </div>
 
                                   @endif
 
-                            @if($companies != null)
+                            @if($tasks != null)
                             <div class="form-group">
-                                <label for="company-content">Select company</label>
+                                <label for="project-content">Select project</label>
 
-                                <select name="company_id" class="form-control" >
+                                <select name="project_id" class="form-control" >
 
-                                @foreach($companies as $company)
-                                        <option value="{{$company->id}}"> {{$company->name}} </option>
+                                @foreach($projects as $project)
+                                        <option value="{{$project->id}}"> {{$project->name}} </option>
                                       @endforeach
                                 </select>
                             </div>
                             @endif
 
                             <div class="form-group">
-                                <label for="project-content">Description</label>
+                                <label for="task-content">Description</label>
                                 <textarea placeholder="Enter description"
                                           style="resize: vertical"
-                                          id="project-content"
+                                          id="task-content"
                                           name="description"
                                           rows="5" spellcheck="false"
                                           class="form-control autosize-target text-left">
@@ -85,7 +83,7 @@
           <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-              <li><a href="/projects"><i class="fa fa-user-o" aria-hidden="true"></i> My projects</a></li>
+              <li><a href="/tasks"><i class="fa fa-user-o" aria-hidden="true"></i> My tasks</a></li>
 
             </ol>
           </div>

@@ -12,9 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
 
     <script src="https://use.fontawesome.com/874dbadbd7.js"></script>
+
 
 
 </head>
