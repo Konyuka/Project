@@ -3,7 +3,7 @@
 @section('content')
 
 
-     
+
      <div class="row col-md-9 col-lg-9 col-sm-9 pull-left ">
       <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
@@ -19,7 +19,7 @@
      <!-- <a href="/projects/create" class="pull-right btn btn-default btn-sm" >Add Project</a> -->
 <br/>
 
-@include('partials.comments')
+
 
 
 <div class="row container-fluid">
@@ -34,28 +34,28 @@
 
                             <div class="form-group">
                                 <label for="comment-content">Comment</label>
-                                <textarea placeholder="Enter comment" 
-                                          style="resize: vertical" 
+                                <textarea placeholder="Enter comment"
+                                          style="resize: vertical"
                                           id="comment-content"
                                           name="body"
                                           rows="3" spellcheck="false"
                                           class="form-control autosize-target text-left">
 
-                                          
+
                                           </textarea>
                             </div>
 
-                            
+
                             <div class="form-group">
                                 <label for="comment-content">Proof of work done (Url/Photos)</label>
-                                <textarea placeholder="Enter url or screenshots" 
-                                          style="resize: vertical" 
+                                <textarea placeholder="Enter url or screenshots"
+                                          style="resize: vertical"
                                           id="comment-content"
                                           name="url"
                                           rows="2" spellcheck="false"
                                           class="form-control autosize-target text-left">
 
-                                          
+
                                           </textarea>
                             </div>
 
@@ -65,12 +65,12 @@
                                        value="Submit"/>
                             </div>
                         </form>
-   
+
 
 
                         </div>
 
-                      
+          @include('partials.comments')            
 
       </div>
 </div>
@@ -85,19 +85,19 @@
             <h4>Actions</h4>
             <ol class="list-unstyled">
               <li><a href="/projects/{{ $project->id }}/edit">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
               Edit</a></li>
               <li><a href="/project/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create new project</a></li>
               <li><a href="/projects"><i class="fa fa-user-o" aria-hidden="true"></i> My projects</a></li>
-            
+
             <br/>
 
 
             @if($project->user_id == Auth::user()->id)
-            
+
               <li>
               <i class="fa fa-power-off" aria-hidden="true"></i>
-              <a   
+              <a
               href="#"
                   onclick="
                   var result = confirm('Are you sure you wish to delete this project?');
@@ -110,7 +110,7 @@
                   Delete
               </a>
 
-              <form id="delete-form" action="{{ route('projects.destroy',[$project->id]) }}" 
+              <form id="delete-form" action="{{ route('projects.destroy',[$project->id]) }}"
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}
@@ -127,7 +127,7 @@
               <div class="col-lg-12 col-md-12 col-xs-12  col-sm-12 ">
               <form id="add-user" action="{{ route('projects.adduser') }}"  method="POST" >
                 {{ csrf_field() }}
-                <div class="input-group"> 
+                <div class="input-group">
                   <input class="form-control" name = "project_id" id="project_id" value="{{$project->id}}" type="hidden">
                   <input type="text" required class="form-control" id="email"  name = "email" placeholder="Email">
                   <span class="input-group-btn">
@@ -142,7 +142,7 @@
             <ol class="list-unstyled" id="member-list">
             @foreach($project->users as $user)
               <li><a href="#"> {{$user->email}} </a> </li>
-              
+
               @endforeach
             </ol>
 
@@ -161,7 +161,7 @@
 
     @section('jqueryScript')
                       <script type="text/javascript">
-                      
+
                             $('#addMember').on('click',function(e){
                               e.preventDefault(); //prevent the form from auto submit
 
@@ -188,7 +188,7 @@
                               success : function(data){
 
                                     var emailField = $('#email').val();
-                                  
+
                                   $('#member-list').prepend('<li><a href="#">'+ emailField +'</a> </li>');
                                   $('#email').val('');
                               },
@@ -198,17 +198,10 @@
                               }
                             });
 
-                             
+
                             });
 
                       </script>
 
 
 @endsection
-
-
-
-
-
-
-
