@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Dashboard</title>
+		<title>Project Manager</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
 		<meta name="author" content="JSOFT.net">
@@ -35,6 +35,10 @@
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="{{asset('octopus/assets/stylesheets/theme-custom.css')}}">
+
+		<!-- Specific Page Vendor CSS (table-editables) -->
+		<link rel="stylesheet" href="{{asset('octopus/assets/vendor/select2/select2.css')}}" />
+		<link rel="stylesheet" href="{{asset('octopus/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css')}}" />
 
 		<!-- Head Libs -->
 		<script src="{{asset('octopus/assets/vendor/modernizr/modernizr.js')}}"></script>
@@ -92,5 +96,12 @@
 
 		<!-- Examples -->
 		<script src="{{asset('octopus/assets/javascripts/dashboard/examples.dashboard.js')}}"></script>
+
+		<!-- Specific Page Vendor (tables editable) -->
+		<script src="{{asset('octopus/assets/vendor/select2/select2.js')}}"></script>
+		<script src="{{asset('octopus/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js')}}"></script>
+		<script src="{{asset('octopus/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js')}}"></script>
+		<!-- Examples (tables editable) -->
+		<script src="{{asset('octopus/assets/javascripts/tables/examples.datatables.editable.js')}}"></script>
 	</body>
 </html>
