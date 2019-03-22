@@ -7,7 +7,7 @@
      <div class="row col-md-9 col-lg-9 col-sm-9 pull-left " style="background: white; ">
 
 
-    <h1>Create new project for </h1>
+    <h1>Create new project</h1>
 
       <!-- Example row of columns -->
       <div class="row  col-md-12 col-lg-12 col-sm-12" >

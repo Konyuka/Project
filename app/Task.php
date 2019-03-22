@@ -9,10 +9,10 @@ class Task extends Model
     //
     protected $fillable = [
         'name',
+        'description',
         'project_id',
         'user_id',
-        'days',
-        'hours',
+        'deadline',
         'company_id'
     ];
 
@@ -39,4 +39,3 @@ class Task extends Model
         return $this->morphMany('App\Comment', 'commentable');
     }
 }
-

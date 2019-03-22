@@ -46,7 +46,7 @@
                             </div>
 
 
-                            <div class="form-group">
+                          <!--<div class="form-group">
                                 <label for="comment-content">Proof of work done (Url/Photos)</label>
                                 <textarea placeholder="Enter url or screenshots"
                                           style="resize: vertical"
@@ -57,7 +57,7 @@
 
 
                                           </textarea>
-                            </div>
+                            </div> -->
 
 
                             <div class="form-group">
@@ -70,7 +70,7 @@
 
                         </div>
 
-          @include('partials.comments')            
+          @include('partials.comments')
 
       </div>
 </div>
@@ -87,7 +87,7 @@
               <li><a href="/projects/{{ $project->id }}/edit">
               <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
               Edit</a></li>
-              <li><a href="/project/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create new project</a></li>
+              <li><a href="/projects/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create new project</a></li>
               <li><a href="/projects"><i class="fa fa-user-o" aria-hidden="true"></i> My projects</a></li>
 
             <br/>

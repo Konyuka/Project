@@ -19,8 +19,30 @@
      <!-- <a href="/projects/create" class="pull-right btn btn-default btn-sm" >Add Project</a> -->
 <br/>
 
+ <div class="row">
+    <div class="col-md-12 col-sm-12  col-xs-11 col-lg-12">
+
+            <!-- Fluid width widget -->
+          <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-comment"></span> 
+                        Deadline for the task
+                    </h3>
+                </div>
+                <div class="panel-body">
+
+                  <p> {{ $task->deadline }} </p>
 
 
+                </div>
+            </div>
+            <!-- End fluid width widget -->
+
+    </div>
+  </div>
+
+<br>
 
 <div class="row container-fluid">
 
@@ -46,7 +68,8 @@
                             </div>
 
 
-                            <div class="form-group">
+                          <!--
+                          <div class="form-group">
                                 <label for="comment-content">Proof of work done (Url/Photos)</label>
                                 <textarea placeholder="Enter url or screenshots"
                                           style="resize: vertical"
@@ -58,6 +81,7 @@
 
                                           </textarea>
                             </div>
+                          -->
 
 
                             <div class="form-group">

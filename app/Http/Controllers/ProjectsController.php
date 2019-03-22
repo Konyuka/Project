@@ -87,6 +87,7 @@ class ProjectsController extends Controller
             $companies = Company::where('user_id', Auth::user()->id)->get();
          }
 
+
          return view('projects.create',['company_id'=>$company_id, 'companies'=>$companies, ]);
      }
 

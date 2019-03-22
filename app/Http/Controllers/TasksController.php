@@ -99,10 +99,10 @@ class TasksController extends Controller
       if(Auth::check()){
           $task = Task::create([
               'name' => $request->input('name'),
+              'description' => $request->input('description'),
               'project_id' => $request->input('project_id'),
               'company_id' => $request->input('company_id'),
-              'days' => $request->input('days'),
-              'hours' => $request->input('hours'),
+              'deadline' => $request->input('deadline'),
               'user_id' => Auth::user()->id
           ]);
 

@@ -58,12 +58,26 @@
                                           style="resize: vertical"
                                           id="task-content"
                                           name="description"
-                                          rows="5" spellcheck="false"
+                                          rows="4" spellcheck="false"
                                           class="form-control autosize-target text-left">
 
 
                                           </textarea>
                             </div>
+
+                            <div class="form-group">
+                                <label for="deadline-content">Time Frame</label>
+                                <textarea placeholder="Define the timeframe for the task(Days/Hours)"
+                                          style="resize: vertical"
+                                          id="deadline-content"
+                                          name="deadline"
+                                          rows="2" spellcheck="false"
+                                          class="form-control autosize-target text-left">
+
+
+                                          </textarea>
+                            </div>
+
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary"
                                        value="submit"/>
