@@ -5514,7 +5514,7 @@ html.header-dark .userbox .dropdown-menu a {
 }
 
 .panel-heading.bg-tertiary {
-	background: #2baab1;
+	background: #171717;
 	color: white;
 	border-bottom: 0 none;
 	border-right: 0 none;
@@ -5567,6 +5567,13 @@ html.header-dark .userbox .dropdown-menu a {
 	border-bottom: 0 none;
 	border-right: 0 none;
 }
+
+.panel-heading.bg-whit {
+	background: #0088cc;
+	border-bottom: 0 none;
+	border-right: 0 none;
+}
+
 
 .panel-actions {
 	right: 15px;
@@ -5853,6 +5860,20 @@ html.header-dark .userbox .dropdown-menu a {
 	background-color: rgba(0, 0, 0, 0.1);
 	-webkit-border-radius: 55px;
 	border-radius: 55px;
+}
+
+.panel-heading-ico {
+	margin: 0 auto;
+	font-size: 42px;
+	font-size: 4.2rem;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 55px;
+	border-radius: 15px;
 }
 
 .panel-heading-icon.bg-primary {

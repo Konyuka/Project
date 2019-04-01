@@ -83,9 +83,10 @@ class TasksController extends Controller
          $tasks = Task::where('user_id', Auth::user()->id)->get();
          $projects = Project::where('user_id', Auth::user()->id)->get();
 
+
       }
 
-      return view('tasks.create',['task_id'=>$task_id, 'tasks'=>$tasks, 'projects'=>$projects]);
+      return view('tasks.create',['task_id'=>$task_id, 'tasks'=>$tasks, 'projects'=>$projects, ]);
     }
 
     /**

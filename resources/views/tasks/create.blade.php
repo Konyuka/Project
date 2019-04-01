@@ -1,114 +1,118 @@
-@extends('layouts.app')
+@extends('layouts.octopus')
 
 @section('content')
 
+<section class="body">
+
+			@include('partials.frame')
 
 
-     <div class="row col-md-9 col-lg-9 col-sm-9 pull-left " style="background: white; ">
-    <h1>Create new Task </h1>
+      <section role="main" class="content-body">
+      <header class="page-header">
+        <h2>Creating a new Task</h2>
 
-      <!-- Example row of columns -->
-      <div class="row  col-md-12 col-lg-12 col-sm-12" >
+        <div class="right-wrapper pull-right">
+          <ol class="breadcrumbs">
+            <li>
+              <a href="http://localhost:8000">
+                <i class="fa fa-home"></i>
+              </a>
+            </li>
+            <li><span> <a href="/tasks">Tasks</a> </span></li>
+            <li><span>Create</span></li>
+          </ol>
 
-      <form method="post" action="{{ route('tasks.store') }}">
-                            {{ csrf_field() }}
+          <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+        </div>
+      </header>
 
+      <div class="row">
+        <div class="col-md-12">
+          <form id="summary-form" action="{{ route('tasks.store') }}" class="form-horizontal" method="post">
 
-                            <div class="form-group">
+            {{ csrf_field() }}
 
-                                <label for="task-name">Name<span class="required">*</span></label>
+            <section class="panel">
 
-                                <input   placeholder="Enter name"
-                                          id="task-name"
-                                          required
-                                          name="name"
-                                          spellcheck="false"
-                                          class="form-control"
-                                  />
+              <header class="panel-heading">
+                <div class="panel-actions">
+                  <a href="#" class="fa fa-caret-down"></a>
+                </div>
 
-                            </div>
+                <h2 class="panel-title">Validation Summary</h2>
+                <p class="panel-subtitle">
+                  The fields with asterisk must be filled
+                </p>
+              </header>
 
-                                  @if($tasks == null)
-                                  <input
-                                  class="form-control"
-                                  type="hidden"
-                                          name="task_id"
-                                          value="{{ $task_id }}"
-                                           />
-                                  </div>
+              <div class="panel-body">
+                <div class="validation-message">
+                  <ul></ul>
+                </div>
 
-                                  @endif
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="task-name">Task Name <span class="required">*</span></label>
+                  <div class="col-sm-9">
+                    <input id="task-name" type="text" name="name" class="form-control" spellcheck="false" title="Plase enter the full names of the company." placeholder="eg.: Student management system" required/>
+                  </div>
+                </div>
 
-                            @if($tasks != null)
-                            <div class="form-group">
-                                <label for="project-content">Select project</label>
+                @if($projects == null)
+                <input
+                class="form-control"
+                type="hidden"
+                        name="project_id"
+                        value="{{ $project_id }}"
+                         />
+                </div>
+                @endif
 
-                                <select name="project_id" class="form-control" >
+                @if($projects != null)
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Select Project</label>
+                  <div class="col-md-6">
+                    <select data-plugin-selectTwo class="form-control populate" name="company_id">
 
-                                @foreach($projects as $project)
-                                        <option value="{{$project->id}}"> {{$project->name}} </option>
-                                      @endforeach
-                                </select>
-                            </div>
-                            @endif
+                      <optgroup label="Project belong to:">
 
-                            <div class="form-group">
-                                <label for="task-content">Description</label>
-                                <textarea placeholder="Enter description"
-                                          style="resize: vertical"
-                                          id="task-content"
-                                          name="description"
-                                          rows="4" spellcheck="false"
-                                          class="form-control autosize-target text-left">
+                        @foreach($projects as $project)
+                        <option value="{{$project->id}}">{{$project->name}}</option>
+                        @endforeach
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                @endif
 
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="task-content">Task Description </label>
+                  <div class="col-sm-9">
+                    <textarea id="company-content" name="description" rows="8" title="Give a brief description of the company if possible" class="form-control" placeholder="eg.: The task will help schools that host many students..."></textarea>
+                  </div>
+                </div>
 
-                                          </textarea>
-                            </div>
+              </div>
 
-                            <div class="form-group">
-                                <label for="deadline-content">Time Frame</label>
-                                <textarea placeholder="Define the timeframe for the task(Days/Hours)"
-                                          style="resize: vertical"
-                                          id="deadline-content"
-                                          name="deadline"
-                                          rows="2" spellcheck="false"
-                                          class="form-control autosize-target text-left">
+              <footer class="panel-footer">
+                <div class="row">
+                  <div class="col-sm-9 col-sm-offset-3">
+                    <button class="btn btn-primary" value="submit">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                  </div>
+                </div>
+              </footer>
 
-
-                                          </textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary"
-                                       value="submit"/>
-                            </div>
-                        </form>
-
-
-      </div>
-</div>
-
-
-<div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-          <!--<div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div> -->
-          <div class="sidebar-module">
-            <h4>Actions</h4>
-            <ol class="list-unstyled">
-              <li><a href="/tasks"><i class="fa fa-user-o" aria-hidden="true"></i> My tasks</a></li>
-
-            </ol>
-          </div>
-
-          <!--<div class="sidebar-module">
-            <h4>Members</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-            </ol>
-          </div> -->
+            </section>
+          </form>
         </div>
 
+      </div>
+    </section>
 
-    @endsection
+    </div>
+
+    @include('partials.aside')
+
+</section>
+
+@endsection

@@ -1,75 +1,90 @@
-@extends('layouts.app')
+@extends('layouts.octopus')
 
 @section('content')
 
+<section class="body">
+
+			@include('partials.frame')
 
 
-     <div class="row col-md-9 col-lg-9 col-sm-9 pull-left " style="background: white;">
-    <h1>Create new company </h1>
+      <section role="main" class="content-body">
+      <header class="page-header">
+        <h2>Creating a new Company</h2>
 
-      <!-- Example row of columns -->
-      <div class="row  col-md-12 col-lg-12 col-sm-12" >
+        <div class="right-wrapper pull-right">
+          <ol class="breadcrumbs">
+            <li>
+              <a href="http://localhost:8000">
+                <i class="fa fa-home"></i>
+              </a>
+            </li>
+            <li><span> <a href="/companies">Companies</a> </span></li>
+            <li><span>Create</span></li>
+          </ol>
 
-      <form method="post" action="{{ route('companies.store') }}">
-                            {{ csrf_field() }}
+          <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+        </div>
+      </header>
 
+      <div class="row">
+        <div class="col-md-12">
+          <form id="summary-form" action="{{ route('companies.store') }}" class="form-horizontal" method="post">
 
-                            <div class="form-group">
-                                <label for="company-name">Name<span class="required">*</span></label>
-                                <input   placeholder="Enter name"
-                                          id="company-name"
-                                          required
-                                          name="name"
-                                          spellcheck="false"
-                                          class="form-control"
-                                           />
-                            </div>
+            {{ csrf_field() }}
 
+            <section class="panel">
 
-                            <div class="form-group">
-                                <label for="company-content">Description</label>
-                                <textarea placeholder="Enter description"
-                                          style="resize: vertical"
-                                          id="company-content"
-                                          name="description"
-                                          rows="5" spellcheck="false"
-                                          class="form-control autosize-target text-left">
+              <header class="panel-heading">
+                <div class="panel-actions">
+                  <a href="#" class="fa fa-caret-down"></a>
+                  <a href="#" class="fa fa-times"></a>
+                </div>
 
+                <h2 class="panel-title">Validation Summary</h2>
+                <p class="panel-subtitle">
+                  The fields with asterisk must be filled
+                </p>
+              </header>
 
-                                          </textarea>
-                            </div>
+              <div class="panel-body">
+                <div class="validation-message">
+                  <ul></ul>
+                </div>
 
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary"
-                                       value="Submit"/>
-                            </div>
-                        </form>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="company-name">Company Name <span class="required">*</span></label>
+                  <div class="col-sm-9">
+                    <input id="company-name" type="text" name="name" class="form-control" spellcheck="false" title="Plase enter the full names of the company." placeholder="eg.: NaiLab" required/>
+                  </div>
+                </div>
 
+                <div class="form-group">
+                  <label class="col-sm-3 control-label" for="company-content">Company Description </label>
+                  <div class="col-sm-9">
+                    <textarea id="company-content" name="description" rows="8" title="Give a brief description of the company if possible" class="form-control" placeholder="eg.: This is currently the leading..."></textarea>
+                  </div>
+                </div>
 
-      </div>
-</div>
-
-
-<div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-          <!--<div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div> -->
-          <div class="sidebar-module">
-            <h4>Actions</h4>
-            <ol class="list-unstyled">
-              <li><a href="/companies"> <i class="fa fa-building-o" aria-hidden="true"></i> My companies</a></li>
-
-            </ol>
-          </div>
-
-          <!--<div class="sidebar-module">
-            <h4>Members</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-            </ol>
-          </div> -->
+              </div>
+              <footer class="panel-footer">
+                <div class="row">
+                  <div class="col-sm-9 col-sm-offset-3">
+                    <button class="btn btn-primary" value="submit">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                  </div>
+                </div>
+              </footer>
+            </section>
+          </form>
         </div>
 
+      </div>
+    </section>
 
-    @endsection
+    </div>
+
+    @include('partials.aside')
+
+</section>
+
+@endsection

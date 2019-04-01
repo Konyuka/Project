@@ -21,9 +21,10 @@ class ProjectsController extends Controller
      {
          //
          if( Auth::check() ){
-             $projects = Project::where('user_id', Auth::user()->id)->get();
+             $projects = Project::with(['company'])->where('user_id', Auth::user()->id)->get();
 
-              return view('projects.index', ['projects'=> $projects]);
+              // dd($projects);
+              return view('projects.index', ['projects'=> $projects, ]);
          }
          return view('auth.login');
      }
@@ -161,7 +162,7 @@ class ProjectsController extends Controller
       * @param  \App\project  $project
       * @return \Illuminate\Http\Response
       */
-     public function update(Request $request, project $project)
+     public function update(Request $request, Project $project)
      {
 
        //save data

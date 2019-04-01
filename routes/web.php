@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function () {
 
+    // Route::post('/companies/{company_id?}', 'CompaniesController@show')->name('companies.update');
     Route::resource('companies', 'CompaniesController');
 
     Route::get('projects/create/{company_id?}', 'ProjectsController@create');
@@ -33,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('roles', 'RolesController');
 
-    Route::get('tasks/create/{project_id?}', 'TasksController@create');
+    Route::get('tasks/create/{task_id?}', 'TasksController@create');
     Route::post('/tasks/adduser', 'TasksController@adduser')->name('tasks.adduser');
     Route::resource('tasks', 'TasksController');
 

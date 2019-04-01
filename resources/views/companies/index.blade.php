@@ -44,7 +44,7 @@
               <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                 <thead>
                   <tr>
-                    <th>Company Batch number</th>
+                    <th>Company Batch</th>
                     <th>Company Name</th>
                     <th>Company Description</th>
                     <th>Actions</th>
@@ -59,8 +59,22 @@
                     <td class="actions">
                       <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                       <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                      <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                      <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                      <a href="/companies/{{ $company->id }}/edit" class="on-default"><i class="fa fa-pencil"></i></a>
+
+                      <a href="http://localhost:8000/companies" class="on-default" onclick="
+		                  var result = confirm('Samahani... Do wish to delete this Company?');
+		                      if( result ){
+		                              event.preventDefault();
+		                              document.getElementById('delete-form').submit();
+		                      }
+		                          "><i class="fa fa-trash-o"></i></a>
+
+															<form id="delete-form" action="{{ route('companies.destroy',[$company->id]) }}"
+								                method="POST" style="display: none;">
+
+								                        <input type="hidden" name="_method" value="delete">
+								                        {{ csrf_field() }}
+								              </form>
                     </td>
                   </tr>
                   @endforeach

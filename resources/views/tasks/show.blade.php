@@ -1,231 +1,189 @@
-@extends('layouts.app')
+@extends('layouts.octopus')
 
 @section('content')
 
+<section class="body">
+
+			@include('partials.frame')
 
 
-     <div class="row col-md-9 col-lg-9 col-sm-9 pull-left ">
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-      <!-- Jumbotron -->
-      <div class="well well-lg" >
-        <h1>{{ $task->name }}</h1>
-        <p class="lead">{{ $task->description }}</p>
-       <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p> -->
-      </div>
+      <section role="main" class="content-body">
+        <header class="page-header">
+          <h2>{{$task->name}} Task</h2>
 
-      <!-- Example row of columns -->
-      <div class="row  col-md-12 col-lg-12 col-sm-12" style="background: white; margin: 10px; ">
-     <!-- <a href="/projects/create" class="pull-right btn btn-default btn-sm" >Add Project</a> -->
-<br/>
-
- <div class="row">
-    <div class="col-md-12 col-sm-12  col-xs-11 col-lg-12">
-
-            <!-- Fluid width widget -->
-          <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <span class="glyphicon glyphicon-comment"></span> 
-                        Deadline for the task
-                    </h3>
-                </div>
-                <div class="panel-body">
-
-                  <p> {{ $task->deadline }} </p>
-
-
-                </div>
-            </div>
-            <!-- End fluid width widget -->
-
-    </div>
-  </div>
-
-<br>
-
-<div class="row container-fluid">
-
-<form method="post" action="{{ route('comments.store') }}">
-                            {{ csrf_field() }}
-
-
-                            <input type="hidden" name="commentable_type" value="App\Task">
-                            <input type="hidden" name="commentable_id" value="{{$task->id}}">
-
-
-                            <div class="form-group">
-                                <label for="comment-content">Comment</label>
-                                <textarea placeholder="Enter comment"
-                                          style="resize: vertical"
-                                          id="comment-content"
-                                          name="body"
-                                          rows="3" spellcheck="false"
-                                          class="form-control autosize-target text-left">
-
-
-                                          </textarea>
-                            </div>
-
-
-                          <!--
-                          <div class="form-group">
-                                <label for="comment-content">Proof of work done (Url/Photos)</label>
-                                <textarea placeholder="Enter url or screenshots"
-                                          style="resize: vertical"
-                                          id="comment-content"
-                                          name="url"
-                                          rows="2" spellcheck="false"
-                                          class="form-control autosize-target text-left">
-
-
-                                          </textarea>
-                            </div>
-                          -->
-
-
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary"
-                                       value="Submit"/>
-                            </div>
-                        </form>
-
-
-
-                        </div>
-
-          @include('partials.comments')
-
-      </div>
-</div>
-
-
-<div class="col-sm-3 col-md-3 col-lg-3 pull-right">
-          <!--<div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div> -->
-          <div class="sidebar-module">
-            <h4>Actions</h4>
-            <ol class="list-unstyled">
-              <li><a href="/tasks/{{ $task->id }}/edit">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-              Edit</a></li>
-              <li><a href="/tasks/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create new Task</a></li>
-              <li><a href="/tasks"><i class="fa fa-user-o" aria-hidden="true"></i> My Tasks</a></li>
-
-            <br/>
-
-
-            @if($task->user_id == Auth::user()->id)
-
+          <div class="right-wrapper pull-right">
+            <ol class="breadcrumbs">
               <li>
-              <i class="fa fa-power-off" aria-hidden="true"></i>
-              <a
-              href="#"
-                  onclick="
-                  var result = confirm('Are you sure you wish to delete this task?');
-                      if( result ){
-                              event.preventDefault();
-                              document.getElementById('delete-form').submit();
-                      }
-                          "
-                          >
-                  Delete
-              </a>
-
-              <form id="delete-form" action="{{ route('tasks.destroy',[$task->id]) }}"
-                method="POST" style="display: none;">
-                        <input type="hidden" name="_method" value="delete">
-                        {{ csrf_field() }}
-              </form>
-
+                <a href="http://localhost:8000">
+                  <i class="fa fa-home"></i>
+                </a>
               </li>
- @endif
-              <!-- <li><a href="#">Add new member</a></li> -->
-            </ol>
-<hr/>
-
-            <h4>Add members</h4>
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-xs-12  col-sm-12 ">
-              <form id="add-user" action="{{ route('tasks.adduser') }}"  method="POST" >
-                {{ csrf_field() }}
-                <div class="input-group">
-                  <input class="form-control" name = "task_id" id="task_id" value="{{$task->id}}" type="hidden">
-                  <input type="text" required class="form-control" id="email"  name = "email" placeholder="Email">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit" id="addMember" >Add!</button>
-                  </span>
-                </div><!-- /input-group -->
-                </form>
-              </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-<br/>
-            <h4>Team Members</h4>
-            <ol class="list-unstyled" id="member-list">
-            @foreach($task->users as $user)
-              <li><a href="#"> {{$user->email}} </a> </li>
-
-              @endforeach
+              <li><a href="/tasks"><span>Tasks</span></a> </li>
+              <li><span>{{$task->name}}</span></li>
             </ol>
 
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+          </div>
+        </header>
+
+        <div class="row">
+
+					@include('partials.success')
+					@include('partials.errors')
+
+          <div class="col-md-10 col-xl-10">
+            <section class="panel-group mb-xlg">
+              <div class="widget-twitter-profile">
+                <div class="profile-info">
+                  <div class="profile-account">
+                    <h1 class="name text-semibold">{{$task->name}}</h1>
+                  </div>
+
+                  <ul class="profile-stats">
+                    <li>
+                      <h5 class="stat text-uppercase">Completed Tasks</h5>
+                      <h4 class="count">3</h4>
+                    </li>
+                    <li>
+                      <h5 class="stat text-uppercase">Due Tasks</h5>
+                      <h4 class="count">4</h4>
+                    </li>
+                  </ul>
+
+                </div>
+                <div class="profile-quote">
+
+                    <h4>
+                      {{$task->description}}
+                    </h4>
+                    <hr class="solid short">
+                  <div class="quote-footer">
+                    <span class="datetime">Task launched on:</span>
+                    -
+                    <a href="#">4:27 PM - 15th Mar 2019</a>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
 
-          <!--<div class="sidebar-module">
-            <h4>Members</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
+
+          <div class="col-md-2 col-xl-2">
+            <section class="panel">
+              <header class="panel-heading bg-tertiary">
+                <p class="text-center">Actions</p>
+              </header>
+              <div class="panel-body">
+                <p><a href="/tasks/{{ $task->id }}/edit"><i class="fa fa-pencil mr-xs"></i> Edit Task</a></p>
+                <!-- <p><a href="/tasks/create/{{ $task->id }}"><i class="fa fa-plus mr-xs"></i> Subdivide Task to Task</a></p> -->
+
+                <p><a href="#" onclick="
+                var result = confirm('Samahani... Do wish to delete this task?');
+                    if( result ){
+                            event.preventDefault();
+                            document.getElementById('delete-form').submit();
+                    }
+                        "><i class="fa fa-trash-o mr-xs"></i> Delete</a></p>
+
+                        <form id="delete-form" action="{{ route('tasks.destroy',[$task->id]) }}"
+                          method="POST" style="display: none;">
+
+                                  <input type="hidden" name="_method" value="delete">
+                                  {{ csrf_field() }}
+                        </form>
+
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <section class="panel">
+              <header class="panel-heading">
+                <div class="panel-actions">
+                  <a href="#" class="fa fa-caret-down"></a>
+                </div>
+                <h3>Comment about this task</h3>
+              </header>
+              <div class="panel-body">
+
+                <form class="form-horizontal form-bordered" method="post" action="{{ route('comments.store') }}">
+                  <div class="form-group">
+										  {{ csrf_field() }}
+
+											<input type="hidden" name="commentable_type" value="App\Task">
+											<input type="hidden" name="commentable_id" value="{{$task->id}}">
+
+                    <label class="col-md-3 control-label" for="comment-content">Comment Editors</label>
+                    <div class="col-md-9">
+
+												<div class="summernote" data-plugin-summernote data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'><textarea rows="18" cols="80" placeholder="Comment about this task" id="comment-content" name="body" ></textarea> </div>
+
+                    </div>
+                  </div>
+									<div class="form-group">
+											<input type="submit" class="btn btn-primary"
+														 value="Submit"/>
+									</div>
+                </form>
+
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-xl-12">
+          <section class="panel panel-horizontal">
+            <header class="panel-heading bg-whit">
+              <div class="panel-heading-ico bg-primary mt-sm">
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </header>
+            <div class="panel-body p-lg">
+              <h2 class="text-semibold mt-sm">Recent Comments</h2>
+              <p> <i class="fa fa-caret-right"></i> Scroll down to view comments on this task </p>
+            </div>
+          </section>
+        </div>
+
+        <div class="timeline">
+          <div class="tm-body">
+            <div class="tm-title">
+              <h3 class="h5 text-uppercase">Chronological list of comments</h3>
+            </div>
+            <ol class="tm-items">
+							@foreach($comments as $comment)
+              <li>
+                <div class="tm-info">
+                  <div class="tm-icon"><i class="fa fa-star"></i></div>
+                </div>
+                <div class="tm-box appear-animation" data-appear-animation="fadeInRight"data-appear-animation-delay="100">
+                  <p>
+										{{ $comment->body }}
+                  </p>
+                  <div class="tm-meta">
+                    <span>
+                      <i class="fa fa-user"></i> By <a href="users/{{$comment->user->id}}">{{ $comment->user->first_name}} {{ $comment->user->last_name}} -  {{ $comment->user->email}}</a>
+                    </span>
+                    <span>
+                      <i class="fa fa-comments"></i> <a href="#">Commented on {{ $comment->created_at }}</a>
+                    </span>
+                  </div>
+                </div>
+              </li>
+							@endforeach
             </ol>
-          </div> -->
+          </div>
         </div>
 
 
-    @endsection
+      </section>
 
-    @section('jqueryScript')
-                      <script type="text/javascript">
+    </div>
 
-                            $('#addMember').on('click',function(e){
-                              e.preventDefault(); //prevent the form from auto submit
+    @include('partials.aside')
 
-                            //   $.ajaxSetup({
-                            //     headers: {
-                            //         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                            //     }
-                            // });
-
-
-                            var formData = {
-                              'task_id' : $('#task_id').val(),
-                              'email' : $('#email').val(),
-                              '_token': $('input[name=_token]').val(),
-                            }
-
-                            var url = 'tasks/adduser';
-
-                            $.ajax({
-                              type: 'post',
-                              url: "{{ URL::route('tasks.adduser') }}",
-                              data : formData,
-                              dataType : 'json',
-                              success : function(data){
-
-                                    var emailField = $('#email').val();
-
-                                  $('#member-list').prepend('<li><a href="#">'+ emailField +'</a> </li>');
-                                  $('#email').val('');
-                              },
-                              error: function(data){
-                                //do something with data
-                                console.log("error sending ajax request" + data);
-                              }
-                            });
-
-
-                            });
-
-                      </script>
-
+</section>
 
 @endsection
