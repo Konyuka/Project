@@ -21,7 +21,7 @@ class TasksController extends Controller
     public function index()
     {
       if( Auth::check() ){
-          $tasks = Task::where('user_id', Auth::user()->id)->get();
+          $tasks = Task::with(['company'])->where('user_id', Auth::user()->id)->get();
 
            return view('tasks.index', ['tasks'=> $tasks]);
       }
@@ -82,11 +82,12 @@ class TasksController extends Controller
       if(!$task_id){
          $tasks = Task::where('user_id', Auth::user()->id)->get();
          $projects = Project::where('user_id', Auth::user()->id)->get();
+         $companies = Company::where('user_id', Auth::user()->id)->get();
 
 
       }
 
-      return view('tasks.create',['task_id'=>$task_id, 'tasks'=>$tasks, 'projects'=>$projects, ]);
+      return view('tasks.create',['task_id'=>$task_id, 'tasks'=>$tasks, 'projects'=>$projects, 'companies'=>$companies, ]);
     }
 
     /**
@@ -98,6 +99,7 @@ class TasksController extends Controller
     public function store(Request $request)
     {
       if(Auth::check()){
+          // dd($request->all());
           $task = Task::create([
               'name' => $request->input('name'),
               'description' => $request->input('description'),

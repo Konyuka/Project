@@ -66,7 +66,12 @@
       <div class="col-lg-12 text-center">
         <div class="section-title">
           <h2>ABOUT</h2>
-          <p>Project Manager is a management system that can be used by individuals or software development firms to manage many projects that are undergoing development process at a go.</p>
+          <p>
+             The biggest problem has always been the synchronisation and flow or operations or task activities during development/coding process.
+                  .Project Manager is a management system that can be used by individuals or software development firms to manage many projects that are undergoing development process at a go.
+          </p>
+          <p>Project Manager can be used to provide a synchronized means of handling the development process of a project by giving a medium of communication between developers, supervisors and the clients all through the stages of the development process. <br> <br>
+            Below are some of the project that can be handled by the Project Manager: </p>
         </div>
       </div>
     </div>
@@ -118,8 +123,9 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="section-title">
-						<h2>Portfolio</h2>
-						<p>Our portfolio is the best way to show our work, you can see here a big range of our work. Check them all and you will find what you are looking for.</p>
+						<h2>Our Portfolio</h2>
+            <p>Project Manager targets mainly the audience of software development firms but also can be used by institutions that offer IT or relevant courses. Therefore, handling students projects that are subject to a course requirement can be made more effective .
+              <br><br>Alternatively, Project Manager can be used personally and can help individuals coordinate projects from distant geographical locations.</p>
 					</div>
 				</div>
 			</div>
@@ -130,8 +136,8 @@
 						<figure class="effect-bubba">
 							<img src="{{asset('lattes/images/demo/portfolio-1.jpg')}}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Dean & Letter</h2>
-								<p>Branding, Design</p>
+								<h2>Software Development Firms</h2>
+								<p>Leave Project Manager to it.</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
 							</figcaption>
 						</figure>
@@ -144,8 +150,8 @@
 						<figure class="effect-bubba">
 							<img src="{{asset('lattes/images/demo/portfolio-1.jpg')}}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Startup Framework</h2>
-								<p>Branding, Web Design</p>
+								<h2>Learning Institutions</h2>
+								<p>Leave Project Manager to it.</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
 							</figcaption>
 						</figure>
@@ -158,8 +164,8 @@
 						<figure class="effect-bubba">
 							<img src="{{asset('lattes/images/demo/portfolio-1.jpg')}}" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Lamp & Velvet</h2>
-								<p>Branding, Web Design</p>
+								<h2>Individuals</h2>
+								<p>Leave Project Manager to it.</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
 							</figcaption>
 						</figure>
@@ -174,30 +180,20 @@
 <section id="ach" class="overlay-dark bg-img1 dark-bg short-section">
   <div class="container text-center">
     <div class="row">
-      <div class="col-md-3 mb-sm-30">
+
+      <div class="col-md-12 mb-sm-30">
         <div class="counter-item">
-          <h2 data-count="59">5</h2>
-          <h6>awards</h6>
+          <h2>Why Project Manager?</h2>
+          <hr>
+
+            Currently software, web and mobile application development and solutions business is a new lucrative market opportunity in Kenya. The digital radicalization has opened opportunities and many software developing companies are venturing into the business and market for such kind of management system is evident. <br> <br>
+            The biggest problem in such a market is there has always been some friction during the synchronisation and flow or operations/task activities during the development process.
+            Take an example of a company assigned around 10 to 20 project concepts to implement into code. So this is where a Project Manager could come in handy. <br> <br>
+            Educational institutions such as universities or many other institutions that offer IT related courses can employ Project Manger to manage students' projects and can also offers an online feature that guides the project supervisor through the development processes carried out incrementaly by the student.
+
         </div>
       </div>
-      <div class="col-md-3 mb-sm-30">
-        <div class="counter-item">
-          <h2 data-count="1054">1054</h2>
-          <h6>Clients</h6>
-        </div>
-      </div>
-      <div class="col-md-3 mb-sm-30">
-        <div class="counter-item">
-          <h2 data-count="34">34</h2>
-          <h6>Team</h6>
-        </div>
-      </div>
-      <div class="col-md-3 mb-sm-30">
-        <div class="counter-item">
-          <h2 data-count="154">154</h2>
-          <h6>Project</h6>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -248,25 +244,25 @@
       <div class="col-lg-12 text-center">
         <div class="section-title">
           <h2>Contact Us</h2>
-          <p>If you have some Questions or need Help! Please Contact Us!<br>We can make a customized version for your business.</p>
+          <p>If you have some queries about Project Manager, Please Contact Us!</p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
         <h3>Our Business Office</h3>
-        <p>30259-00100, Ngong Road, Nairobi</p>
-        <p><i class="fa fa-phone"></i> +254 716 202 298</p>
-        <p><i class="fa fa-envelope"></i> michaelsaiba84@gmail.com</p>
+        <p>www.alwaysonline.findus/saiba</p>
+        <p><i class="fa fa-phone"></i>   +254 716 202 298</p>
+        <p><i class="fa fa-envelope"></i>   michaelsaiba84@gmail.com</p>
       </div>
       <div class="col-md-3">
         <h3>Business Hours</h3>
-        <p><i class="fa fa-clock-o"></i> <span class="day">Weekdays:</span><span>9am to 8pm</span></p>
-        <p><i class="fa fa-clock-o"></i> <span class="day">Saturday:</span><span>9am to 2pm</span></p>
-        <p><i class="fa fa-clock-o"></i> <span class="day">Sunday:</span><span>Closed</span></p>
+        <p><i class="fa fa-clock-o"></i> <span class="day">Weekdays:</span><span> Email Us</span></p>
+        <p><i class="fa fa-clock-o"></i> <span class="day">Saturday:</span><span> Online on Saturdays</span></p>
+        <p><i class="fa fa-clock-o"></i> <span class="day">Sunday:</span><span> Online shortly after Church</span></p>
       </div>
       <div class="col-md-6">
-        <form name="sentMessage" id="contactForm" novalidate="">
+        <form name="sentMessage" id="contactForm" novalidate="" >
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">

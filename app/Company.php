@@ -16,16 +16,22 @@ class Company extends Model
 
     ];
 
-    public function user(){
+    public function user()
+    {
 		return $this->belongsTo('App\User');
     }
 
-    public function projects(){
+    public function projects()
+    {
         return $this->hasMany('App\Project');
     }
 
     public function comments()
     {
         return $this->morphMany('App\Comment', 'commentable');
+    }
+
+    public function tasks(){
+		return $this->hasMany('App\Task');
     }
 }

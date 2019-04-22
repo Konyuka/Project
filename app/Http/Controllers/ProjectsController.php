@@ -22,8 +22,6 @@ class ProjectsController extends Controller
          //
          if( Auth::check() ){
              $projects = Project::with(['company'])->where('user_id', Auth::user()->id)->get();
-
-              // dd($projects);
               return view('projects.index', ['projects'=> $projects, ]);
          }
          return view('auth.login');

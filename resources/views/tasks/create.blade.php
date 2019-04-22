@@ -71,7 +71,7 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label">Select Project</label>
                   <div class="col-md-6">
-                    <select data-plugin-selectTwo class="form-control populate" name="company_id">
+                    <select data-plugin-selectTwo class="form-control populate" name="project_id">
 
                       <optgroup label="Project belong to:">
 
@@ -80,6 +80,34 @@
                         @endforeach
                       </optgroup>
                     </select>
+                  </div>
+                </div>
+                @endif
+
+
+								@if($companies == null)
+                <input
+                class="form-control"
+                type="hidden"
+                        name="company_id"
+                        value="{{ $company_id }}"
+                         />
+                </div>
+                @endif
+
+                @if($companies != null)
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Select Company</label>
+                  <div class="col-md-6">
+
+                    <select data-plugin-selectTwo class="form-control populate" name="company_id">
+                      <optgroup label="Task belongs to project:">
+                        @foreach($companies as $company)
+                        <option value="{{$company->id}}">{{$company->name}}</option>
+                        @endforeach
+                      </optgroup>
+                    </select>
+
                   </div>
                 </div>
                 @endif

@@ -12,7 +12,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand page-scroll" href="#page-top"><img src="{{asset('latts/images/logo.png')}}" alt="Project Manager logo"></a>
+      <a class="navbar-brand page-scroll" href="http://localhost:8000"><img src="{{asset('latts/images/logo.png')}}" alt="Project Manager logo"></a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

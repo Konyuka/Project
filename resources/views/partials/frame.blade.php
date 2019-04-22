@@ -168,7 +168,7 @@
         <figure class="profile-picture">
           <img src="{{asset('octopus/assets/images/!logged-user.jpg')}}" alt="Joseph Doe" class="img-circle" data-lock-picture="{{asset('octopus/assets/images/!logged-user.jpg')}}" />
         </figure>
-        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+        <div class="profile-info" data-lock-name="{{ Auth::user()->name }}" data-lock-email="{{ Auth::user()->email }}">
           <span class="name">{{ Auth::user()->name }}</span>
           <span class="role">Administrator</span>
         </div>
@@ -180,7 +180,7 @@
         <ul class="list-unstyled">
           <li class="divider"></li>
           <li>
-            <a role="menuitem" tabindex="-1" href="{{asset('octopus/pages-user-profile.html')}}"><i class="fa fa-user"></i> My Profile</a>
+            <a role="menuitem" tabindex="-1" href="{{asset('octopus/pages-user-profil.html')}}"><i class="fa fa-user"></i> My Profile</a>
           </li>
           <li>
             <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>

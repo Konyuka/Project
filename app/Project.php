@@ -21,7 +21,10 @@ class Project extends Model
 		return $this->belongsToMany('App\User');
     }
 
-
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
 
     public function company(){
 		return $this->belongsTo('App\Company');
@@ -31,5 +34,7 @@ class Project extends Model
     {
         return $this->morphMany('App\Comment', 'commentable');
     }
+
+
 
 }

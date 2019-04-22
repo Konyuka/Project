@@ -44,7 +44,6 @@
               <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                 <thead>
                   <tr>
-                    <th>Company Batch</th>
                     <th>Company Name</th>
                     <th>Company Description</th>
                     <th>Actions</th>
@@ -53,7 +52,6 @@
                 <tbody>
                   @foreach($companies as $company)
                   <tr class="gradeX">
-                    <td> {{$company->id}} </td>
                     <td> <a href="/companies/{{ $company->id }}">{{$company->name}}</a> </td>
                     <td> {{$company->description}} </td>
                     <td class="actions">

@@ -55,8 +55,8 @@
                   @foreach($tasks as $task)
                   <tr class="gradeX">
 
-                    <td>{{$task->name}}</td>
-                    <td> {{$task->name}} </td>
+                    <td>{{$task->project->company->name }}</td>
+                    <td> {{$task->project->name }} </td>
 
                     <td> <a href="/tasks/{{ $task->id }}">{{$task->name}}</a> </td>
                     <td> {{$task->description}} </td>
